@@ -59,7 +59,11 @@ end
 meeting_id = entry.tags
 # call sh script to download the zip
 @logger.info(basedir + '/get_recording_files.sh ' + meeting_id)
-system basedir + '/get_recording_files.sh ' + meeting_id
+result = system(basedir + '/get_recording_files.sh ' + meeting_id)
+if (!$result)
+    @logger.error('Error occurred retrieving recording files.')
+    exit 2
+end
 
 out_dir = ENV['OUTDIR'] ? ENV['OUTDIR'] : "/tmp"
 dir_name = File.join(out_dir, meeting_id)
