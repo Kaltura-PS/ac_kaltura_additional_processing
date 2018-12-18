@@ -51,7 +51,7 @@ def process_weblinks_and_hosts(client, entry, recording_path, use_html = true)
         end
     end
 
-    @logger.ingo('Adding the following users to entry co-editors: ' + entitled_users_edit.join(','))
+    @logger.info('Adding the following users to entry co-editors: ' + entitled_users_edit.join(','))
     update.entitled_users_edit = entitled_users_edit.join(',')
     begin
         result = client.media_service.update(entry.id, update);
