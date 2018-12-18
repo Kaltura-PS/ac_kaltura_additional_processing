@@ -24,4 +24,4 @@ $ ./additional_processing_wrapper.sh </path/to/asset/list/csv>
 
 Where `</path/to/asset/list/csv>` is the path to a CSV file in the following format:
 
-kaltura_entry_id,sco_id,recording_id
+kaltura_entry_id,sco_id,....
